@@ -13,7 +13,7 @@ module odd_even_sort(clk, rst, in, out);
     genvar k;
 
     generate
-        for(k = 16; k > 0; k = k - 1) begin
+        for(k = n; k > 0; k = k - 1) begin
             assign out[k*8-1:k*8-8] = temp[16-k];
             assign tempwire[16-k] = in[k*8-1:k*8-8];
         end
