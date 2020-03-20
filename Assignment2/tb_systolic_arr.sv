@@ -34,7 +34,7 @@ module tb_systolic_arr();
         rst = 0;
         #10;
         rst = 1;
-        #200;
+        #2000;
         $finish;
     end
 
