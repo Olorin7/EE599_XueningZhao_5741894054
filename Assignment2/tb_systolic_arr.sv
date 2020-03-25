@@ -1,11 +1,12 @@
 module tb_systolic_arr();
     parameter k = 8;
     parameter D = 16;
+    parameter d = $clog2(D);
 
     reg clk, rst;
     reg [k-1:0] m_a[0:D-1][0:D-1], m_b[0:D-1][0:D-1];
     wire [k-1:0] m_aa[0:D-1][0:2*D-2], m_bb[0:D-1][0:2*D-2];
-    wire [2*k+D-2:0] out[0:D-1][0:D-1];
+    wire [2*k+d-1:0] out[0:D-1][0:D-1];
     reg [k-1:0] in_l[0:D-1], in_t[0:D-1];
     integer i, h, f;
 
