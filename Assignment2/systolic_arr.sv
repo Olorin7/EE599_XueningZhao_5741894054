@@ -1,10 +1,11 @@
 module systolic_arr(clk, rst, in_l, in_t, out);
     parameter k = 8;
     parameter D = 16;
+    parameter d = $clog2(D);
 
     input clk, rst;
     input [k-1:0] in_l[0:D-1], in_t[0:D-1];
-    output [2*k+D-2:0] out[0:D-1][0:D-1];
+    output [2*k+d-1:0] out[0:D-1][0:D-1];
 
     wire [k-1:0] out_r[0:D-1][0:D-1], out_b[0:D-1][0:D-1];
 
